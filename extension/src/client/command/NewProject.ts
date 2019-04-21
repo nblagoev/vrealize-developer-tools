@@ -9,7 +9,7 @@ import { AutoWire, Logger, MavenCliProxy, ProjectPickInfo, ProjectType, uri } fr
 import * as vscode from "vscode"
 
 import { Commands, MavenPom } from "../constants"
-import { ConfigurationManager, EnvironmentManager } from "../manager"
+import { ConfigurationManager, EnvironmentManager } from "../system"
 import { MultiStepInput, QuickPickParameters } from "../ui"
 import { Command } from "./Command"
 
