@@ -5,7 +5,7 @@
 
 import * as path from "path"
 
-import URI, { UriComponents } from "vscode-uri"
+import { URI, UriComponents } from "vscode-uri"
 
 import { default as Logger } from "../logger"
 import { PomFile } from "../maven/"
@@ -13,7 +13,7 @@ import { PomFile } from "../maven/"
 export class WorkspaceFolder {
     private readonly logger = Logger.get("WorkspaceFolder")
 
-    constructor(readonly uri: URI, readonly name: string) {}
+    constructor(public readonly uri: URI, public readonly name: string) {}
 
     get projectType(): string | undefined {
         try {

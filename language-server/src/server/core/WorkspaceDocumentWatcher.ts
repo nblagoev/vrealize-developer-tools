@@ -5,7 +5,7 @@
 
 import { AbstractWatcher, AutoWire, ChangeListener, Logger, WorkspaceFolder } from "vrealize-common"
 import { DidSaveTextDocumentParams, Disposable, FileChangeType, FileEvent } from "vscode-languageserver"
-import URI from "vscode-uri"
+import { URI } from "vscode-uri"
 
 import { ConnectionLocator } from "./ConnectionLocator"
 import { Environment } from "./Environment"
@@ -38,7 +38,7 @@ export class WorkspaceDocumentWatcher extends AbstractWatcher<FileSavedEventPara
     private watchedFilesSaved(event: DidSaveTextDocumentParams): void {
         this.logger.info("Watched workspace files were saved.")
         const newEvent: FileSavedEventParams = {
-            changes: [this.convertEvent.bind(this)]
+            changes: [this.convertEvent(event)]
         }
 
         this.notifyListeners(newEvent)

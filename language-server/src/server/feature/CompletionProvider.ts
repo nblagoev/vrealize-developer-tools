@@ -12,7 +12,7 @@ import {
     Position,
     TextDocumentPositionParams
 } from "vscode-languageserver"
-import URI from "vscode-uri"
+import { URI } from "vscode-uri"
 
 import { ConnectionLocator, Environment, HintLookup } from "../core"
 import { Synchronizer, TextDocumentWrapper } from "../document"
@@ -36,7 +36,7 @@ interface CompletionPrefix {
 class CompletionPrefixPattern {
     private readonly patterns: RegExp[]
 
-    constructor(readonly kind: CompletionPrefixKind, ...patterns: RegExp[]) {
+    constructor(public readonly kind: CompletionPrefixKind, ...patterns: RegExp[]) {
         this.patterns = patterns
     }
 
